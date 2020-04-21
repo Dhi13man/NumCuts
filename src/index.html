@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>NumCuts</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top" onload="read_from_file()">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Num-Cuts</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#shortcuts">New Shortcuts</a></li>
+                      <li class="nav-item"></li>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#yrscutsection">Your Shortcuts</a></li>
+                      <li class="nav-item"></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">The team</a></li><li class="nav-item"></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">ABout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading"><br><br><br>Welcome To  NumCuts!</div>
+                <div class="masthead-heading text-uppercase">Let's get started!</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#shortcuts">Set up your shortcuts</a></div>
+        </header>
+        <!-- New Shortcut-->
+        <section class="page-section shortcuts" id="shortcuts">
+            <div class="container">
+                <div class="text-center">
+                  <h2 class="section-heading text-uppercase">New Shortcut</h2>
+                  <h3 class="section-subheading text-muted">What do you mean this part of the page looks unprofessional? </h3>
+                </div>
+                <div class="inputfields" align="center">
+                    <p>
+                        <label>Character to be pressed(a-z, 1-9):&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+                        <input name="pressed_symbol" type="text" class="symtf" id="symb" required="required" data-validation-required-message="Please enter Symbol to be pressed while holding Num key.">
+                        <br>
+                        <label>Location of file/Shell Script/Web page URL to open:&nbsp; &nbsp; </label>
+                        <input name="shell_script" type="text" class="shelltf" id="shellscr" required="required" data-validation-required-message="Please enter what you want to run.">
+						<p class="help-block text-danger" id='shell_symb'></p>
+                    </p>
+                    <p align="center">
+						<br><input type="button" class="go_button" id="button1" onclick="write_to_file()" value="Add this new Shortcut">
+					</p>
+                </div>
+            </div>
+        </section>
+        <!--  Existing Shortcuts-->
+        <section class="page-section yrscutssection" id="yrscutsection">
+            <div class="container">
+                <div class="text-center">
+                  <h2 class="section-heading text-uppercase" id="titleyrcuts">Your Shortcuts</h2>
+                  <h3 class="section-subheading text-muted">The ones you've already set, y'know?</h3>
+                </div>
+				<div class="filefound" id="var_list">
+				</div><br><br>
+				<div class="filefound" id="clear_tool">
+				</div>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                  <h2 class="section-heading text-uppercase">MY Amazing Team</h2>
+                  <h3 class="section-subheading text-muted">Don't @ me.</h3>
+                </div>
+                <div class="row">
+            <div class="col-lg-4"> </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/BoJack_Horseman_S06E01_12m1s17305f.jpg" alt="" />
+                            <h4>Horseface, the 13th</h4>
+                            <p class="text-muted">Depressed horsey.</p>
+                            <a class="btn btn-dark btn-social mx-2" href="http://www.twitter.com/dhi13man"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="http://www.facebook.com/dhi13man"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="http://www.linkedin.com/dhi13man"><i class="fab fa-linkedin-in"></i></a>
+                      </div>
+                    </div>
+              </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                      <p class="large text-muted">Thank you for giving this software a shot. In the end, it was just a glorified project to show off.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                  <h2 class="section-heading text-uppercase">About this software</h2>
+                  <h3 class="section-subheading text-muted">All that made this possible.</h3>
+                </div>
+                    <div class="row align-items-stretch mb-5">
+                      <div class="col-md-6">
+                            <div class="credits">
+                              <h2>Dependencies and Software used:</h2>
+                              <br>
+								<ol>
+								<li>This GUI:</li>
+									<ol>
+										<li><a href="https://www.electronjs.org/releases/stable#8.2.3">Electron Framework v8.2.3</a></li>
+										<li><a href="https://nodejs.org/en/about/">Nodejs v13.13.0 and it's depenencies, (mostly 'fs')</a></li>
+										<li><a href="https://www.w3schools.com/html/">HTML5</a></li>
+										<li><a href="https://www.w3schools.com/css/default.asp">CSS</a></li>
+										<li><a href="https://www.w3schools.com/js/default.asp">JavaScript</a></li>
+										<li><a href="https://www.adobe.com/in/products/dreamweaver.html">Adobe DreamWeaver</a></li>
+									</ol>
+								<br>
+								<li>The execution software:</li>
+								  <ol>
+									<li><a href="https://en.cppreference.com/w/cpp/14">C++14</a></li>
+									<li>Basic Windows Shell Script</li>
+										<li><a href="http://www.mingw.org/">MingW-w64 Toolchain(for compiling and making the cpp)</a></li>
+										<li>A whole bunch of Jetbrains products:
+											<ol>
+												<li><a href="https://www.jetbrains.com/clion/">CLion</a></li>
+												<li><a href="https://www.jetbrains.com/webstorm/">WebStorm</a></li>
+												<li><a href="https://www.jetbrains.com/pycharm/">Pycharm</a></li>
+											</ol>
+										</li>
+								  </ol>
+								</ol>
+                        </div>
+					  </div>
+                    </div>
+                    <div class="text-center">
+                       <br><input type="button" align="center" class="go_button" id="button2" value="Visit Github Repository" onclick="https://www.github.com/dhi13man/">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">NumCuts,<br>Open Source, 2020</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-right"><a class="mr-3" href="http://www.github.com/dhi13man">The Software</a>&nbsp;&nbsp;<a href="http://www.github.com/dhi13man">The Creator</a></div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Scripts -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+		<!-- Settings file handling-->
+        <script src="js/filesystem.js"></script>
+    </body>
+</html>
