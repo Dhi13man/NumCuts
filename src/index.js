@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, shell, BrowserWindow } from 'electron';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -35,6 +35,18 @@ const createWindow = () => {
   mainWindow.setMenuBarVisibility(false);
   mainWindow.maximize();
   mainWindow.setTitle("NumCuts Configuration Tool")
+  // Open all links in external browser
+  function isSafeishURL(url) {
+    return url.startsWith('http:') || url.startsWith('https:');
+  }
+
+  mainWindow.webContents.on('will-navigate', (event, url) => {
+    event.preventDefault();
+    if (isSafeishURL(url)) {
+      shell.openExternal(url);
+    }
+  });
+  //*********************************** dhi13man special *******************************************8
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -52,7 +64,6 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
-// Open all links in external browser
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
