@@ -30,6 +30,7 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
+
   //*********************************** dhi13man special *******************************************8
   mainWindow.setMenuBarVisibility(false);
   mainWindow.maximize();

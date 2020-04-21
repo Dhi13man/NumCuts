@@ -10488,7 +10488,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 	border-color: red;
 	color: red;
   }
-
+  #delete_button {
+      padding: 15px 20px;
+      color: #FED136;
+  }
+  #githubbutton {
+      padding: 15px 20px;
+  }
+	
   .symtf, .shelltf {
     border-color: black;
     border-width: thin;
@@ -10516,10 +10523,6 @@ section#contact form#contactForm :-ms-input-placeholder {
 	padding: 0 150px;
 	align-content: center;
     color: white;
-  }
-  #delete_button {
-      padding: 15px 20px;
-      color: #FED136;
   }
   #shortcut_index{
       width: 50px;
