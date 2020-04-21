@@ -14,8 +14,8 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
 	//*********************************** dhi13man special *******************************************
-	frame: false,
     webPreferences: {
       nodeIntegration: true,
 

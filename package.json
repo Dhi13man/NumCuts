@@ -2,7 +2,7 @@
   "name": "num-cuts",
   "productName": "num-cuts",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Configure Num-Cuts: A tool for custom shortcuts.",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -11,9 +11,9 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint src --color",
-	"package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
-	"package-win": "electron-packager . electron-tutorial-app --overwrite --asar --platform=win32 --arch=x64 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",    
-	"package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar --platform=win32 --arch=x64 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": "dhi13man",
@@ -51,6 +51,7 @@
     }
   },
   "dependencies": {
+    "custom-electron-titlebar": "^3.2.2-hotfix62",
     "electron-compile": "^6.4.4",
     "electron-squirrel-startup": "^1.0.0"
   },
