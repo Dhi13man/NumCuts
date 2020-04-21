@@ -47,10 +47,10 @@ RM = "D:\Program Files\JetBrains\apps\CLion\ch-0\201.6668.126\bin\cmake\win\bin\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner"
+CMAKE_SOURCE_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug\CMakeFiles" "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug\CMakeFiles" "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named shrtcut_runner
+# Target rules for targets named NumCuts
 
 # Build rule for target.
-shrtcut_runner: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 shrtcut_runner
-.PHONY : shrtcut_runner
+NumCuts: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 NumCuts
+.PHONY : NumCuts
 
 # fast build rule for target.
-shrtcut_runner/fast:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/build
-.PHONY : shrtcut_runner/fast
+NumCuts/fast:
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/build
+.PHONY : NumCuts/fast
 
 main.obj: main.cpp.obj
 
@@ -128,7 +128,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -137,7 +137,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -146,35 +146,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-referencecode_keylogger.obj: referencecode_keylogger.cpp.obj
-
-.PHONY : referencecode_keylogger.obj
-
-# target to build an object file
-referencecode_keylogger.cpp.obj:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/referencecode_keylogger.cpp.obj
-.PHONY : referencecode_keylogger.cpp.obj
-
-referencecode_keylogger.i: referencecode_keylogger.cpp.i
-
-.PHONY : referencecode_keylogger.i
-
-# target to preprocess a source file
-referencecode_keylogger.cpp.i:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/referencecode_keylogger.cpp.i
-.PHONY : referencecode_keylogger.cpp.i
-
-referencecode_keylogger.s: referencecode_keylogger.cpp.s
-
-.PHONY : referencecode_keylogger.s
-
-# target to generate assembly for a file
-referencecode_keylogger.cpp.s:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/referencecode_keylogger.cpp.s
-.PHONY : referencecode_keylogger.cpp.s
 
 # Help Target
 help:
@@ -182,15 +155,12 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... shrtcut_runner
+	@echo ... NumCuts
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... referencecode_keylogger.obj
-	@echo ... referencecode_keylogger.i
-	@echo ... referencecode_keylogger.s
 .PHONY : help
 
 

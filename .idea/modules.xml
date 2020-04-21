@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/shrtcut_runner.iml" filepath="$PROJECT_DIR$/.idea/shrtcut_runner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NumCuts.iml" filepath="$PROJECT_DIR$/.idea/NumCuts.iml" />
     </modules>
   </component>
 </project>

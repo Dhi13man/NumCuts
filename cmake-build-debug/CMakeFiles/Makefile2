@@ -43,16 +43,16 @@ RM = "D:\Program Files\JetBrains\apps\CLion\ch-0\201.6668.126\bin\cmake\win\bin\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner"
+CMAKE_SOURCE_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/shrtcut_runner.dir/all
+all: CMakeFiles/NumCuts.dir/all
 
 .PHONY : all
 
@@ -62,36 +62,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/shrtcut_runner.dir/clean
+clean: CMakeFiles/NumCuts.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/shrtcut_runner.dir
+# Target rules for target CMakeFiles/NumCuts.dir
 
 # All Build rule for target.
-CMakeFiles/shrtcut_runner.dir/all:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/depend
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug\CMakeFiles" --progress-num=1,2,3 "Built target shrtcut_runner"
-.PHONY : CMakeFiles/shrtcut_runner.dir/all
+CMakeFiles/NumCuts.dir/all:
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/depend
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target NumCuts"
+.PHONY : CMakeFiles/NumCuts.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/shrtcut_runner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug\CMakeFiles" 3
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/shrtcut_runner.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\shrtcut_runner\cmake-build-debug\CMakeFiles" 0
-.PHONY : CMakeFiles/shrtcut_runner.dir/rule
+CMakeFiles/NumCuts.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/NumCuts.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/NumCuts.dir/rule
 
 # Convenience name for target.
-shrtcut_runner: CMakeFiles/shrtcut_runner.dir/rule
+NumCuts: CMakeFiles/NumCuts.dir/rule
 
-.PHONY : shrtcut_runner
+.PHONY : NumCuts
 
 # clean rule for target.
-CMakeFiles/shrtcut_runner.dir/clean:
-	$(MAKE) -f CMakeFiles\shrtcut_runner.dir\build.make CMakeFiles/shrtcut_runner.dir/clean
-.PHONY : CMakeFiles/shrtcut_runner.dir/clean
+CMakeFiles/NumCuts.dir/clean:
+	$(MAKE) -f CMakeFiles\NumCuts.dir\build.make CMakeFiles/NumCuts.dir/clean
+.PHONY : CMakeFiles/NumCuts.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

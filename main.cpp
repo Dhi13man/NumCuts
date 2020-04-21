@@ -3,6 +3,7 @@
 #include <winuser.h>
 #include <fstream>
 #include <cstring>
+#include "cstdlib"
 
 using namespace std;
 
@@ -29,36 +30,36 @@ char *to_char_arr(const string& inString) {
     return out;
 }
 
+void open_command_here(const string& command, const string& here){
+    fstream p;
+    p.open((here + "exec.bat"), ios::out);
+    p << "echo off\n";
+    p << "cd " + here + "\n";
+    p <<  "start \"\" " + command;
+    p.close();
+    system(to_char_arr(here + "exec.bat"));
+    remove("exec.bat");
+}
 
-// Installing this program(Requires wtf.html in same directory as this)
+
+// Installing this program(Requires the GUI app folder in same directory as this)
 void install_me(const string& installDir) {
     // Create the folder at install location
     char *temp = to_char_arr(installDir);
     mkdir(temp);
 
-    // Copy html file to install directory
-    fstream q, r;
-    q.open("wtf.html", ios::in);
-    r.open((installDir + "wtf.html"), ios::out);
-    r << q.rdbuf();
-    q.close();
-    r.close();
+    // Copy GUI folder to install directory
+    system(to_char_arr("robocopy Numcuts-gui " + installDir + " /MIR"));
 
-    // Copy self to startup directory
-	ShellExecute(nullptr, "open", R"(copy shrtcut_runner.exe "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup")", nullptr, nullptr,
-                                     SW_SHOWDEFAULT);
-    ShellExecute(nullptr, "open", "cls", nullptr, nullptr, SW_SHOWDEFAULT);
-
-    // Write a blank settings.dat file
-    fstream set;
-    set.open((installDir + "settings.dat"), ios::out);
-    set.close();
+    // Set working directory to install directory
+    system(to_char_arr("copy Numcuts.exe " + installDir));
+    open_command_here("NumCutsGUI.exe", installDir);
 }
 
 
 // Helper function for executor function
 string hash_splitter(string para, int which) {
-    string out("");
+    string out;
     if (which == 1) {
         for(int i = 0; para[i] != '#'; i++)
             out += para[i];
@@ -85,7 +86,7 @@ void executor(const string& address) {
     int no_of_shortcuts = 0;
     while(getline(reader, temp[no_of_shortcuts]))
         no_of_shortcuts++;
-
+    
     // Interpret data from settings file
     string dictionary[2][no_of_shortcuts];
     for (int j = 0; j < no_of_shortcuts; j++) {
@@ -101,16 +102,14 @@ void executor(const string& address) {
                 if (GetAsyncKeyState(num_lock)) {
                     if (c == '0') {
                         // Default case: Num lock + 0  to show web page
-                        ShellExecute(nullptr, "open", to_char_arr(address + ("wtf.html")), nullptr, nullptr,
-                                     SW_SHOWDEFAULT);
+                        open_command_here("NumCutsGUI.exe", address);
                         Sleep(300);
                     }
                     else {
                         // Use settings to make shortcuts
                         for (int i = 0; i < no_of_shortcuts; i++) {
                             if (c == dictionary[1][i][0] || c == toupper(dictionary[1][i][0])) {
-                                ShellExecute(nullptr, "open", to_char_arr(dictionary[0][i]), nullptr, nullptr,
-                                             SW_SHOWDEFAULT);
+                                open_command_here(dictionary[0][i], address);
                                 Sleep(300);
                                 break;
                             }
@@ -131,11 +130,8 @@ int main() {
     // Settings file not found. First run. So, install
     if (!p){
         install_me(install_dir);
-        ShellExecute(nullptr, "open", to_char_arr(install_dir + ("wtf.html")), nullptr, nullptr, SW_SHOWDEFAULT);
-
         printf("\n\nFrom next run on, press Num-lock + 0 to open configuration page anytime! \nPress enter to exit.");
         scanf("cxc");
-
         exit(1);
     }
 

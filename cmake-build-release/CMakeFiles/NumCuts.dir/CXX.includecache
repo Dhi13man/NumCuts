@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/main.cpp
+io.h
+-
+windows.h
+-
+winuser.h
+-
+fstream
+-
+cstring
+-
+cstdlib
+C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/cstdlib
+

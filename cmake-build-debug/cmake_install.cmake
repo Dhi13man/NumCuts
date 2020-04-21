@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/shrtcut_runner
+# Install script for directory: C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/shrtcut_runner")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/NumCuts")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/shrtcut_runner/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

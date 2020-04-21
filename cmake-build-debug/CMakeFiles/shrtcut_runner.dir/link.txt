@@ -1,3 +1,0 @@
-"D:\Program Files\JetBrains\apps\CLion\ch-0\201.6668.126\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\shrtcut_runner.dir/objects.a
-D:\mingw\bin\ar.exe cr CMakeFiles\shrtcut_runner.dir/objects.a @CMakeFiles\shrtcut_runner.dir\objects1.rsp
-D:\mingw\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\shrtcut_runner.dir/objects.a -Wl,--no-whole-archive  -o shrtcut_runner.exe -Wl,--out-implib,libshrtcut_runner.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\shrtcut_runner.dir\linklibs.rsp
