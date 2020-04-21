@@ -27,8 +27,13 @@
                       <li class="nav-item"></li>
                       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#yrscutsection">Your Shortcuts</a></li>
                       <li class="nav-item"></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">The team</a></li><li class="nav-item"></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">ABout</a></li>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">The team</a></li>
+                      <li class="nav-item"></li>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">About</a></li>
+                      <li class="nav-item"></li><li class="nav-item"></li>
+                      <li class="nav-item">
+                      	<a class="nav-link js-scroll-trigger" href="#!" onclick="close_app()" onmouseleave='style="color: white;"' onmousemove='style="color: red; padding-right: 0"'>Close</a>
+                      </li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +41,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading"><br><br><br>Welcome To  NumCuts!</div>
+                <div class="masthead-subheading" style="font-size: 100px"><br>Welcome To  NumCuts!</div>
                 <div class="masthead-heading text-uppercase">Let's get started!</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#shortcuts">Set up your shortcuts</a></div>
         </header>
@@ -168,13 +173,6 @@
 		<!-- Settings file handling-->
         <script src="js/filesystem.js"></script>
         <!-- TITLE BAR CUSTOM-->
-		<script>
-			const customTitlebar = require('custom-electron-titlebar');
-			const titlebar = new customTitlebar.Titlebar({
-			    backgroundColor: customTitlebar.Color.fromHex('#000000'),
-			    updateBackground: new Color(new RGBA(0, 0, 0, 1)),
 
-			});
-		</script>
     </body>
 </html>

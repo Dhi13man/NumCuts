@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Configure Num-Cuts: A tool for custom shortcuts.",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",

@@ -1,5 +1,7 @@
-let str_arr=[];
+import { shell } from 'electron';
 
+
+let str_arr = [];
 function write_to_file() {
 	const fs = require("fs");
 	let str = '';
@@ -9,7 +11,7 @@ function write_to_file() {
 	const script = document.getElementById("shellscr").value;
 	const err_msg = document.getElementById("shell_symb");
 
-	// Ensure valid data being sent
+	// Ensure valid non-blank data being sent
 	if (symbol === '' || script === '') {
 		if (symbol === '' && script === '')
 			err_msg.innerText = "You have left both the Fields blank. Please Enter valid values.";
@@ -20,16 +22,19 @@ function write_to_file() {
 	}
 	// Data is not blank
 	else {
-		// Two last validity checks
-		if (symbol.length > 1) {
-			err_msg.innerText = "You have not entered any one valid key. Please Enter valid value.";
+		// Last validity checks
+		if (symbol.length > 1 || symbol === '0') {
+			err_msg.innerText = "You have not entered any one valid key. Please Enter valid value between 1-9, a-z etc.";
 			return;
 		}
-
 		if (str_arr.length !== 0) {
 			for (let i = 0; i < str_arr.length - 1; i++) {
 				if (symbol === str_arr[i].split("#")[1]) {
 					err_msg.innerText = "Key Already assigned. Check shortcut list.";
+					return;
+				}
+				if (script === str_arr[i].split("#")[0]) {
+					err_msg.innerText = "Shortcut already set to \'" + str_arr[i].split("#")[1] + "\'. Check shortcut list.";
 					return;
 				}
 			}
@@ -44,10 +49,20 @@ function write_to_file() {
 			}
 		);
 
+		if (str_arr.length === 0)
+			shell.openItem('move_to_startup.bat');
+
 		// Reload page
-		location.replace('#yrscutsection')
+		location.replace('#yrscutsection');
 		location.reload();
 	}
+}
+
+
+function close_app(){
+	const remote = require('electron').remote;
+	let w = remote.getCurrentWindow();
+	w.close();
 }
 
 
@@ -93,7 +108,7 @@ function read_from_file(){
 						if (str === '')
 							clear_file();
 
-						let str_arr = str.split('\n');
+						str_arr = str.split('\n');
 						let shortcut = "", script = "";
 
 						str = "<br><table align='center' " + table_ele_style + ">" +
@@ -113,7 +128,8 @@ function read_from_file(){
 								"<input type='text' class='filefound' id='shortcut_index' required='required' placeholder='>= 1'>" +
 								"<p class='help-block text-danger' id='at_index'></p>" +
 								"<input type='button' class='go_button filefound' id='delete_button' onclick='clear_index()' value='Delete this Shortcut'>" +
-								"\<br><br><input type='button' class='go_button' id='button2' value='Clear all existing Shortcuts' onclick='clear_file()'>";
+								"<br><br><input type='button' class='go_button' id='button2' value='Clear all existing Shortcuts' onclick='clear_file()'>" +
+								"<br><br><td>Note:</td><td>&nbsp;&nbsp;&nbsp;NumLock + 0 is reserved for opening this GUI, anytime.</td>";
 							items.innerHTML = str;
 						}
 					}
