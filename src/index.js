@@ -14,10 +14,12 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+	//*********************************** dhi13man special *******************************************
+	frame: false,
     webPreferences: {
       nodeIntegration: true,
 
-      //*********************************** dhi13man special *******************************************8
+      //*********************************** dhi13man special *******************************************
       devTools: false,
 
       // enableRemoteModule: false,
@@ -31,7 +33,7 @@ const createWindow = () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
 
-  //*********************************** dhi13man special *******************************************8
+  //*********************************** dhi13man special *******************************************
   mainWindow.setMenuBarVisibility(false);
   mainWindow.maximize();
   mainWindow.setTitle("NumCuts Configuration Tool")
@@ -41,8 +43,8 @@ const createWindow = () => {
   }
 
   mainWindow.webContents.on('will-navigate', (event, url) => {
-    event.preventDefault();
     if (isSafeishURL(url)) {
+	  event.preventDefault();
       shell.openExternal(url);
     }
   });
