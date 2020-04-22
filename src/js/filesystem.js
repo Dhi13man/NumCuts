@@ -84,6 +84,8 @@ function clear_file(){
 
 
 function read_from_file(){
+	//Reload backend with new settings
+	shell.openItem('reload.bat');
 	// Set required values
 	let items = document.getElementById("var_list");
 	let clear_tool = document.getElementById("clear_tool");
