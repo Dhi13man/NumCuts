@@ -24,10 +24,6 @@ How to use Released NumCuts:
 1. Simply extract all the contents of the compressed Release file and run NumCuts.exe.
 2. The Release can only be executed on the specific OS and architecture it's been built for.
 3. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
-
-
-
---------------------------------------------------------------
 4. Run your assigned shotcuts with Num-Lock + (the assigned key) 
 5. If needed, open the GUI again to reconfigure shorcuts using Num-Lock + 0.
 
@@ -60,5 +56,5 @@ The execution software:
 2. Basic Windows Shell Script
 3.MingW-w64 Toolchain(for compiling and making the cpp)
 4. Jetbrains products:
-  a. CLion
-  b. WebStorm
+   CLion, 
+   WebStorm
