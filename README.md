@@ -1,8 +1,8 @@
 # Num-Cuts
 A C++ based tool that allows you to set up custom shortcut keys that you can press along with Num Lock to run anything on your PC or the web. Contains a full HTML/CSS based UI made using NodeJS and Electron Framework.
 
-#The Repository has 2 Branches:
---
+# The Repository has 2 Branches:
+
 
 Master: 
 --
@@ -11,6 +11,9 @@ Contains the back-end code constructed in C++ and Batch. It is responsible for s
 Master-GUI:
 --
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
+
+
+
 
 
 -------------------------------------------------------------
