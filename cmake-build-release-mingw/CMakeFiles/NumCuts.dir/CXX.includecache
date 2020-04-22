@@ -7,14 +7,12 @@
 #IncludeRegexTransform: 
 
 C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/NumCuts.cpp
-io.h
--
 windows.h
 -
 winuser.h
 -
 fstream
 -
-unistd.h
--
+iostream
+C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/iostream
 

@@ -1,14 +1,15 @@
-#include <io.h>
 #include <windows.h>
 #include <winuser.h>
 #include <fstream>
-#include <unistd.h>
+#include "iostream"
 
 using namespace std;
 
-#define num_lock 0x90
-#define shift 0x10
+#define num_lock VK_NUMLOCK
+#define shift VK VK_RSHIFT0
+#define caps_lock VK_CAPITAL
 
+int master_key = num_lock;
 
 // Keeps main terminal window hidden after first run
 void StealthMode(){
@@ -40,7 +41,7 @@ void open_command_here(const string& command, const string& here){
 
 
 // Check if file exists
-bool if_exists(const string& file_address) {
+bool file_exists(const string& file_address) {
     ifstream file;
     file.open(to_char_arr(file_address));
     return !!file;
@@ -51,12 +52,17 @@ bool if_exists(const string& file_address) {
 void install_me(const string& installDir) {
 
     // Copy GUI folder to install directory
-    system(to_char_arr("robocopy Numcuts-gui " + installDir + " /MIR"));
+    if (file_exists("Numcuts-gui\\NumCutsGUI.exe")) {
+        system(to_char_arr("robocopy Numcuts-gui " + installDir + " /MIR"));
 
-    // Set working directory to install directory
-    system(to_char_arr("cd " + installDir));
-    system(to_char_arr("copy Numcuts.exe " + installDir));
-    open_command_here(installDir + "NumCutsGUI.exe", installDir);
+        // Set working directory to install directory
+        system(to_char_arr("cd " + installDir));
+        system(to_char_arr("copy Numcuts.exe " + installDir));
+        open_command_here(installDir + "NumCutsGUI.exe", installDir);
+    }
+    else {
+        printf("\n\n\n****************ERROR****************\nEXTRACT NUMCUTS-GUI folder to the same directory as this file and restart!!!!");
+    }
 }
 
 
@@ -112,7 +118,7 @@ void executor(const string& address) {
 
         for(c = 8; c <= 222; c++) {
             if(GetAsyncKeyState(c)==-32767) {
-                if (GetAsyncKeyState(num_lock)) {
+                if (GetAsyncKeyState(master_key)) {
                     if (c == '0') {
                         // Default case: Num lock + 0  to show web page
                         open_command_here("NumCutsGUI.exe", address);
@@ -136,18 +142,42 @@ void executor(const string& address) {
 
 int main() {
     string install_dir = "C:\\SCRunner\\";
+    int i;
 
     // Settings file or GUI file not found. First run. So, install
-    if (!if_exists(install_dir + "NumCutsGUI.exe")){
+    if (!file_exists(install_dir + "NumCutsGUI.exe")){
+        // Choose Master key
+        printf("\nWhich key do you want to hold to run Shortcuts?\n\nEnter 1 for Num Lock and 0 for Caps Lock: ");
+        cin>>i;
         install_me(install_dir);
-        printf("\n\n\n*****************INSTALLATION COMPLETE*****************\n\nPress Num Lock + 0 to open the GUI configurer anytime.\nEnter 0 to exit, 1 to continue: ");
-        int i;
-        scanf("%d", &i);
+
+        // Set master key into a file called m_key.dat in install dir
+        ofstream k_file;
+        k_file.open(install_dir + "m_key.dat");
+        k_file<<((i==0) ? caps_lock : num_lock);
+        k_file.close();
+
+
+        string key = (i==0)? "Caps Lock" : "Num Lock";
+        cout<<master_key;
+        cout<<"\n\n\n*****************INSTALLATION COMPLETE*****************\n";
         if (i==0)
-            exit(0);
+            cout<<"\nDefault key changed to Caps Lock. Please only use it now, not Num Lock.";
+        cout<<("\nPress " + key + " + 0 to open the configuring GUI anytime.");
+        cin.ignore();
+        cin.ignore();
+        return(0);
     }
 
     // Program has been installed and been run before
+    // Read Master Key
+    ifstream k_file;
+    k_file.open(install_dir + "m_key.dat");
+    k_file>>i;
+    k_file.close();
+    master_key = i;
+
+    // Start working
     StealthMode();
     executor(to_char_arr(install_dir));
 
