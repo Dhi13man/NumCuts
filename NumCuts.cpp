@@ -55,7 +55,7 @@ void install_me(const string& installDir) {
 
     // Set working directory to install directory
     system(to_char_arr("copy Numcuts.exe " + installDir));
-    open_command_here("NumCutsGUI.exe", installDir);
+    open_command_here(installDir + "NumCutsGUI.exe", installDir);
 }
 
 
@@ -114,8 +114,8 @@ void executor(const string& address) {
                 if (GetAsyncKeyState(num_lock)) {
                     if (c == '0') {
                         // Default case: Num lock + 0  to show web page
-                        open_command_here("NumCutsGUI.exe", address);
-                        open_command_here("Reload.bat", address);
+                        open_command_here(address + "NumCutsGUI.exe", address);
+                        open_command_here(address + "Reload.bat", address);
                     }
                     else {
                         // Use settings to make shortcuts
