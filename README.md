@@ -25,7 +25,7 @@ How to use Released NumCuts:
 2. The Release can only be executed on the specific OS and architecture it's been built for.
 3. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
 4. Run your assigned shotcuts with Num-Lock + (the assigned key) 
-5. If needed, open the GUI again to reconfigure shorcuts using Num-Lock + 0.
+5. If needed, open the GUI again to reconfigure shorcuts, using Num-Lock + 0.
 
 
 How to use Source Code:
