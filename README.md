@@ -58,3 +58,11 @@ The execution software:
 4. Jetbrains products:
    CLion, 
    WebStorm
+
+
+Note:
+--
+
+1. NumCuts has been programmed to automatically move to Windows Startup, so it can launch automatically every time the PC starts.
+2. The console also hides itself after installation. No Window is visible at all, thereby other operations are not disturbed.
+3. Being built around Batch commands, it will only work on Windows. Feel free to make your own versions for other systems.
