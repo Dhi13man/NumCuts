@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <winuser.h>
 #include <fstream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -38,11 +39,16 @@ void open_command_here(const string& command, const string& here){
 }
 
 
+// Check if file exists
+bool if_exists(const string& file_address) {
+    ifstream file;
+    file.open(to_char_arr(file_address));
+    return !!file;
+}
+
+
 // Installing this program(Requires the GUI app folder in same directory as this)
 void install_me(const string& installDir) {
-    // Create the folder at install location
-    char *temp = to_char_arr(installDir);
-    open_command_here("mkdir ", installDir);
 
     // Copy GUI folder to install directory
     system(to_char_arr("robocopy Numcuts-gui " + installDir + " /MIR"));
@@ -109,6 +115,7 @@ void executor(const string& address) {
                     if (c == '0') {
                         // Default case: Num lock + 0  to show web page
                         open_command_here("NumCutsGUI.exe", address);
+                        open_command_here("Reload.bat", address);
                     }
                     else {
                         // Use settings to make shortcuts
@@ -128,17 +135,15 @@ void executor(const string& address) {
 
 int main() {
     string install_dir = "C:\\SCRunner\\";
-    fstream p;
-    p.open(to_char_arr(install_dir + ("settings.dat")), ios::in);
 
-    // Settings file not found. First run. So, install
-    if (!p){
+    // Settings file or GUI file not found. First run. So, install
+    if (!if_exists(install_dir + "NumCutsGUI.exe")){
         install_me(install_dir);
-        printf("\n\nFrom next run on, press Num-lock + 0 to open configuration page anytime! \nEnter 0 to exit, 1 to Start: ");
+        printf("\n\n\n*****************INSTALLATION COMPLETE*****************\n\nPress Num Lock + 0 to open the GUI configurer anytime.\nEnter 0 to exit, 1 to continue: ");
         int i;
         scanf("%d", &i);
-        if (i == 0)
-            exit(1);
+        if (i==0)
+            exit(0);
     }
 
     // Program has been installed and been run before
