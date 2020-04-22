@@ -91,6 +91,14 @@ void executor(const string& address) {
         string dictionary[2][no_of_shortcuts];
         for (int j = 0; j < no_of_shortcuts; j++) {
             dictionary[0][j] = hash_splitter(temp[j], 1);
+
+            // If space is there in script, put quotations around it
+            for (int pos = 0; pos < dictionary[0][j].length(); pos++) {
+                if (dictionary[0][j][pos] == ' '){
+                    dictionary[0][j] = "\"" + dictionary[0][j] + "\"";
+                    break;
+                }
+            }
             dictionary[1][j] = hash_splitter(temp[j], 2);
         }
         reader.close();
