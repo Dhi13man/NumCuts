@@ -10,11 +10,12 @@ Contains the back-end code constructed in C++ and Batch. It is responsible for s
 # Master-GUI:
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
 
-Release Usage:
+How to use Released NumCuts:
 --
-The Release can only be executed on the specific OS and architecture it's been built for. Simply extract all the contents of the Release rar and run NumCuts.exe.
+1. Simply extract all the contents of the compressed Release file and run NumCuts.exe.
+2. The Release can only be executed on the specific OS and architecture it's been built for.
 
-Source code Usage:
+How to use Source Code:
 --
 1. Both the compiled outputs of the source codes in Master and Master-GUI must be placed in the same folder. Then NumCuts.exe must be executed once to set everything up. The original files can then be deleted.
 2. As this software has been built around Windows Batch and Shell-Script, it is Windows only.
