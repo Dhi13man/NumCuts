@@ -52,6 +52,8 @@ function write_to_file() {
 		if (str_arr.length === 0)
 			shell.openItem('move_to_startup.bat');
 
+		//Reload backend with new settings
+		shell.openItem('reload.bat');
 		// Reload page
 		location.replace('#yrscutsection');
 		location.reload();
@@ -78,14 +80,16 @@ function clear_file(){
 											}
 			);
 
+
+	
+	//Reload backend with new settings
+	shell.openItem('reload.bat');
 	// Reload page
 	location.reload();
 }
 
 
 function read_from_file(){
-	//Reload backend with new settings
-	shell.openItem('reload.bat');
 	// Set required values
 	let items = document.getElementById("var_list");
 	let clear_tool = document.getElementById("clear_tool");
@@ -173,6 +177,8 @@ function clear_index() {
 						}
 					);
 
+				//Reload backend with new settings
+				shell.openItem('reload.bat');
 				// Reload page
 				location.replace('#yrscutsection')
 				location.reload();
