@@ -78,6 +78,7 @@ The execution tool:
    CLion, 
    WebStorm
 
+# Screenshots:
 
 ![NumCuts_new_shortcut](https://user-images.githubusercontent.com/40964441/80081845-1d718900-8571-11ea-9b10-deff89b8467c.png)
 ![NumCuts_Shortcuts_Example](https://user-images.githubusercontent.com/40964441/80081867-26faf100-8571-11ea-8d10-1f81c5b3501c.png)
