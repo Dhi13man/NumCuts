@@ -22,12 +22,12 @@ A C++ based tool that allows you to set up custom shortcut keys that you can pre
 ----
 
 
-Master Branch(this):
-----
+[Master Branch(this)](https://github.com/dhi13man/NumCuts/):
+---
 Contains the back-end code constructed in C++ and Batch. It is responsible for self-installation to C:\\ScrRunner (modifiable) and Startup, and executing the Scripts and GUI based on shortcuts.
 
-Master-GUI Branch:
-----
+[Master-GUI Branch](https://github.com/dhi13man/NumCuts/releases):
+---
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
 
 
