@@ -19,18 +19,19 @@ A C++ based tool that allows you to set up custom shortcut keys that you can pre
 # NumCuts
 A C++ based tool that allows you to set up custom shortcut keys that you can press along with Num Lock/Caps Lock to run anything on your PC or the web. Contains a full HTML/CSS based UI made using NodeJS and Electron Framework.
 
-#
+----
 
 
-Master Branch(this): 
---
+Master Branch(this):
+----
 Contains the back-end code constructed in C++ and Batch. It is responsible for self-installation to C:\\ScrRunner (modifiable) and Startup, and executing the Scripts and GUI based on shortcuts.
 
 Master-GUI Branch:
---
+----
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
 
-#
+
+---
 
 How to use Released NumCuts:
 --
@@ -86,7 +87,7 @@ The execution tool:
 ![NumCutsSetup](https://user-images.githubusercontent.com/40964441/80081971-48f47380-8571-11ea-99bd-3c5ffc0d2736.png)
 
 
-Note:
+Notes:
 --
 
 1. NumCuts has been programmed to automatically move to Windows Startup, so it can launch automatically every time the PC starts.
