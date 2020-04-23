@@ -1,14 +1,14 @@
 # Num-Cuts
 A C++ based tool that allows you to set up custom shortcut keys that you can press along with Num Lock/Caps Lock to run anything on your PC or the web. Contains a full HTML/CSS based UI made using NodeJS and Electron Framework.
 
-# The Repository has 2 Branches:
+#
 
 
-Master: 
+Master Branch: 
 --
 Contains the back-end code constructed in C++ and Batch. It is responsible for self-installation to C:\\ScrRunner (modifiable) and Startup, and executing the Scripts and GUI based on shortcuts.
 
-Master-GUI:
+Master-GUI Branch:
 --
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
 
