@@ -38,9 +38,9 @@ Installation:
 1. Grab the latest version from the [Releases page](https://github.com/dhi13man/NumCuts/releases)
 2. Download and extract all the contents of the compressed Release file into the same folder and run NumCuts.exe.
 3. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
-4. Run your assigned shortcuts with 'Num-Lock + (the assigned key)' or 'Caps Lock + (the assigned key)' if so set.
+4. Run your assigned shortcuts with `Num-Lock + (the assigned key)` or `Caps Lock + (the assigned key)` if so set.
 5. The original extracted files can then be deleted.
-6. If needed, open the GUI again to reconfigure shorcuts, using 'Num-Lock + 0' or 'Caps Lock + 0' if so set.
+6. If needed, open the GUI again to reconfigure shorcuts, using `Num-Lock + 0` or `Caps Lock + 0` if so set.
 
 
 Source Code usage:
