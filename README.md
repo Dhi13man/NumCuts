@@ -33,16 +33,17 @@ Contains the front-end GUI interface made through HTML, CSS and JavaScript, buil
 
 ---
 
-How to use Released NumCuts:
+Installation:
 --
-1. Extract all the contents of the compressed Release file into the same folder and run NumCuts.exe.
-2. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
-3. Run your assigned shortcuts with Num-Lock(or Caps Lock if so set) + (the assigned key) 
-4. The original extracted files can then be deleted.
-5. If needed, open the GUI again to reconfigure shorcuts, using Num-Lock(or Caps Lock if so set) + 0.
+1. Grab the latest version from the [Releases page](https://github.com/dhi13man/NumCuts/releases)
+2. Download and extract all the contents of the compressed Release file into the same folder and run NumCuts.exe.
+3. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
+4. Run your assigned shortcuts with 'Num-Lock + (the assigned key)' or 'Caps Lock + (the assigned key)' if so set.
+5. The original extracted files can then be deleted.
+6. If needed, open the GUI again to reconfigure shorcuts, using 'Num-Lock + 0' or 'Caps Lock + 0' if so set.
 
 
-How to use Source Code:
+Source Code usage:
 --
 1. Modify the Source codes in either branch as needed.
 2. Compile the Source code of Master(C++), and package Master-GUI(Nodejs Electron). 
