@@ -16,7 +16,7 @@
   },
   "keywords": [],
   "author": "dhi13man",
-  "license": "MIT",
+  "license": "GPL 3.0",
   "config": {
     "forge": {
       "make_targets": {
