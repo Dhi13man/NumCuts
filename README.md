@@ -55,7 +55,7 @@ Adobe DreamWeaver
 The execution tool:
 1. C++14
 2. Basic Windows Shell Script
-3.MingW-w64 Toolchain(for compiling and making the cpp)
+3. MingW-w64 Toolchain(for compiling and making the cpp)
 4. Jetbrains products:
    CLion, 
    WebStorm
