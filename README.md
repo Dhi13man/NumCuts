@@ -15,10 +15,10 @@ A C++ based tool that allows you to set up custom shortcut keys that you can pre
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -->
+![NumCuts_Shortcuts_Example](https://user-images.githubusercontent.com/40964441/80081867-26faf100-8571-11ea-8d10-1f81c5b3501c.png)
 
 # NumCuts GUI 
 This branch of the Num-Cuts GUI contains the Source Code for the HTML/CSS based UI, made using NodeJS and Electron Framework.
-![NumCuts_Shortcuts_Example](https://user-images.githubusercontent.com/40964441/80081867-26faf100-8571-11ea-8d10-1f81c5b3501c.png)
 
 ----
 
