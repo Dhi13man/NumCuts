@@ -33,7 +33,7 @@ function write_to_file() {
 		if (symbol === '' && script === '')
 			err_msg.innerText = "You have left both the Fields blank. Please Enter valid values.";
 		else if (symbol === '')
-			err_msg.innerText = "You have not entered the key to be pressed with Num Lock. Please Enter valid value.";
+			err_msg.innerText = "You have not entered the key to be pressed with Num-Lock/Caps-Lock. Please Enter valid value.";
 		else
 			err_msg.innerText = "You have not entered the command to be executed. Please Enter valid value.";
 	}
@@ -152,7 +152,7 @@ function read_from_file(){
 								"<p class='help-block text-danger' id='at_index'></p>" +
 								"<input type='button' class='go_button filefound' id='delete_button' onclick='clear_index()' value='Delete this Shortcut'>" +
 								"<br><br><input type='button' class='go_button' id='button2' value='Clear all existing Shortcuts' onclick='clear_file()'>" +
-								"<br><br><td>Note:</td><td>&nbsp;&nbsp;&nbsp;NumLock + 0 is reserved for opening this GUI, anytime.</td>";
+								"<br><br><td>Note:</td><td>&nbsp;&nbsp;&nbsp;Num-Lock/Caps-Lock + 0 is reserved for opening this GUI, anytime.</td>";
 							items.innerHTML = str;
 						}
 					}

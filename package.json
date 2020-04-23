@@ -1,7 +1,7 @@
 {
-  "name": "num-cuts",
-  "productName": "num-cuts",
-  "version": "1.0.0",
+  "name": "NumCuts-GUI",
+  "productName": "NumCutsGUI",
+  "version": "1.8.0",
   "description": "Configure Num-Cuts: A tool for custom shortcuts.",
   "main": "src/index.js",
   "scripts": {
@@ -40,8 +40,8 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "dhi13man",
+        "name": "NumCuts"
       },
       "windowsStoreConfig": {
         "packageName": "",

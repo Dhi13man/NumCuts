@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<html lang="en">
 <!--
 This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framework for NumCuts.
 
@@ -16,8 +19,6 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -->
-<!DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -49,9 +50,7 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                       <li class="nav-item"></li>
                       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">About</a></li>
                       <li class="nav-item"></li><li class="nav-item"></li>
-                      <li class="nav-item">
-                      	<a class="nav-link js-scroll-trigger" href="#!" onclick="close_app()" onmouseleave='style="color: white;"' onmousemove='style="color: red; padding-right: 0"'>Close</a>
-                      </li>
+                      <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#!" onClick="close_app()" onmouseleave="style='color: white;'" onMouseMove="style='color: red; font-weight: bolder; font-size: larger'">Close</a> </li>
                     </ul>
                 </div>
             </div>
@@ -72,12 +71,12 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                 </div>
                 <div class="inputfields" align="center">
                     <p>
-                        <label>Character to be pressed(a-z, 1-9):&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+                        <label>Character to be pressed(a-z, 1-9):  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
                         <input name="pressed_symbol" type="text" class="symtf" id="symb" required="required" data-validation-required-message="Please enter Symbol to be pressed while holding Num key.">
                         <br>
-                        <label>Location of file/Shell Script/Web page URL to open:&nbsp; &nbsp; </label>
+                        <label>Location of file/Shell Script/Web page URL to open:&nbsp; &nbsp;</label>
                         <input name="shell_script" type="text" class="shelltf" id="shellscr" required="required" data-validation-required-message="Please enter what you want to run.">
-						<p class="help-block text-danger" id='shell_symb'></p>
+						<p class="help-block text-danger" id="shell_symb"></p>
                     </p>
                     <p align="center">
 						<br><input type="button" class="go_button" id="button1" onclick="write_to_file()" value="Add this new Shortcut">
@@ -110,8 +109,8 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/BoJack_Horseman_S06E01_12m1s17305f.jpg" alt="" />
-                            <h4>Horseface, the 13th</h4>
-                            <p class="text-muted">Depressed horsey.</p>
+                            <h4>Horse McFace</h4>
+                            <p class="text-muted">Sad horsey.</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://www.twitter.com/dhi13man"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="http://www.facebook.com/dhi13man"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="http://www.linkedin.com/dhi13man"><i class="fab fa-linkedin-in"></i></a>
                       </div>
                     </div>

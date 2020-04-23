@@ -21,6 +21,7 @@ const createWindow = () => {
 
       //*********************************** dhi13man special *******************************************
       devTools: false,
+      show:false
 
       // enableRemoteModule: false,
       // contextIsolation: true,
@@ -48,6 +49,12 @@ const createWindow = () => {
       shell.openExternal(url);
     }
   });
+
+
+  //Run only once loaded
+  mainWindow.once('ready-to-show', () => {
+     mainWindow.show()
+ })
   //*********************************** dhi13man special *******************************************8
 
   // Open the DevTools.
