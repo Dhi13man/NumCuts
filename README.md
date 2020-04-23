@@ -79,6 +79,12 @@ The execution tool:
    WebStorm
 
 
+![NumCuts_new_shortcut](https://user-images.githubusercontent.com/40964441/80081845-1d718900-8571-11ea-9b10-deff89b8467c.png)
+![NumCuts_Shortcuts_Example](https://user-images.githubusercontent.com/40964441/80081867-26faf100-8571-11ea-8d10-1f81c5b3501c.png)
+![NumCutsGUI](https://user-images.githubusercontent.com/40964441/80081873-2b270e80-8571-11ea-8347-c877239641af.png)
+![NumCutsSetup](https://user-images.githubusercontent.com/40964441/80081971-48f47380-8571-11ea-99bd-3c5ffc0d2736.png)
+
+
 Note:
 --
 
