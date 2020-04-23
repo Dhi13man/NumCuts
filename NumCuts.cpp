@@ -160,16 +160,16 @@ void executor(const string& address) {
 
 
 int main() {
-    string install_dir = "C:\\SCRunner\\";
+    string install_dir = "C:\\Programs\\NumCuts\\";
     int i;
-
     // Settings file or GUI file not found. First run. So, install
     if (!file_exists(install_dir + "NumCutsGUI.exe")){
+        system("cls");
         // Choose Master key
-        cout<<"NumCuts  Copyright (C) 2020  dhi13man\n" + 
-        "This program comes with ABSOLUTELY NO WARRANTY.\n" + 
-        "This is free software, and you are welcome to redistribute it\n" + 
-        "under certain conditions.";
+        cout<<("NumCuts  Copyright (C) 2020  dhi13man\n"
+        "This program comes with ABSOLUTELY NO WARRANTY.\n"
+        "This is free software, and you are welcome to redistribute it\n"
+        "under certain conditions.");
         printf("\n\n\nWhich key do you want to hold to run Shortcuts?\n\nEnter 1 for Num Lock and 0 for Caps Lock: ");
         cin>>i;
         install_me(install_dir);
@@ -188,6 +188,7 @@ int main() {
         cout<<("\nPress " + key + " + 0 to open the configuring GUI anytime.");
         cin.ignore();
         cin.ignore();
+        open_command_here("Reload.bat", install_dir);
         return(0);
     }
 
