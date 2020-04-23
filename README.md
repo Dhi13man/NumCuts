@@ -12,9 +12,7 @@ Master-GUI Branch:
 --
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
 
-
----
-
+#
 
 How to use Released NumCuts:
 --
