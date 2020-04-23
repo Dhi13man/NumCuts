@@ -15,10 +15,11 @@ A C++ based tool that allows you to set up custom shortcut keys that you can pre
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -->
+![NumCutsGUI](https://user-images.githubusercontent.com/40964441/80081873-2b270e80-8571-11ea-8347-c877239641af.png)
 
 # NumCuts
 A C++ based tool that allows you to set up custom shortcut keys that you can press along with Num Lock/Caps Lock to run anything on your PC or the web. Contains a full HTML/CSS based UI made using NodeJS and Electron Framework.
-![NumCutsGUI](https://user-images.githubusercontent.com/40964441/80081873-2b270e80-8571-11ea-8347-c877239641af.png)
+
 ----
 
 
