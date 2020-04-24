@@ -52,7 +52,8 @@
   "dependencies": {
     "custom-electron-titlebar": "^3.2.2-hotfix62",
     "electron-compile": "^6.4.4",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "icon-gen": "^2.0.0"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
