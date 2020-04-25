@@ -160,7 +160,7 @@ void executor(const string& address) {
 
 
 int main() {
-    string install_dir = "C:\\Programs\\NumCuts\\";
+    string install_dir = R"(C:\Programs\NumCuts\)";
     int i;
     // Settings file or GUI file not found. First run. So, install
     if (!file_exists(install_dir + "NumCutsGUI.exe")){
