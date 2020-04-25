@@ -1,61 +1,58 @@
 import { app, shell, BrowserWindow } from 'electron';
 
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
 }
 
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
-
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     frame: false,
-	//*********************************** dhi13man special *******************************************
+    // ***************************** dhi13man special ************************************
     webPreferences: {
       nodeIntegration: true,
-
-      //*********************************** dhi13man special *******************************************
+      show: false,
       devTools: false,
-      show:false
+      // ***************************** dhi13man special ************************************
 
       // enableRemoteModule: false,
       // contextIsolation: true,
       // nativeWindowOpen: true,
       // sandbox: true,
-    }
+    },
   });
 
-  // and load the index.html of the app.
+
+  // Load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
-
-
-  //*********************************** dhi13man special *******************************************
+  // Run only once loaded
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+  });
+  // ***************************** dhi13man special ************************************
   mainWindow.setMenuBarVisibility(false);
   mainWindow.maximize();
-  mainWindow.setTitle("NumCuts Configuration Tool")
+  mainWindow.setTitle('NumCuts Configuration Tool');
+
   // Open all links in external browser
-  function isSafeishURL(url) {
+  function isSafeURL(url) {
     return url.startsWith('http:') || url.startsWith('https:');
   }
-
   mainWindow.webContents.on('will-navigate', (event, url) => {
-    if (isSafeishURL(url)) {
-	  event.preventDefault();
+    if (isSafeURL(url)) {
+      event.preventDefault();
       shell.openExternal(url);
     }
   });
-
-
-  //Run only once loaded
-  mainWindow.once('ready-to-show', () => {
-     mainWindow.show()
- })
-  //*********************************** dhi13man special *******************************************8
+  // ***************************** dhi13man special ************************************
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();

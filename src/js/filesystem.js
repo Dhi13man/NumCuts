@@ -1,5 +1,5 @@
 /*
-Helper functipns for the HTML/CSS based UI made using NodeJS and Electron Framework.
+Helper functions for the HTML/CSS based UI made using NodeJS and Electron Framework.
     Copyright (C) 2020  Dhiman Seal
 
     This program is free software: you can redistribute it and/or modify
@@ -17,189 +17,229 @@ Helper functipns for the HTML/CSS based UI made using NodeJS and Electron Framew
 */
 
 import { shell } from 'electron';
+import { createStyleSheet } from 'custom-electron-titlebar/lib/common/dom';
 
-let str_arr = [];
-function write_to_file() {
-	const fs = require("fs");
-	let str = '';
+const fs = require('fs');
 
-	// Store symbol and shell script to file settings.dat
-	const symbol = document.getElementById("symb").value;
-	const script = document.getElementById("shellscr").value;
-	const err_msg = document.getElementById("shell_symb");
+let strArr = [];
+// Store symbol and shell script to file settings.dat
+let symbol;
+let script;
+const errorMessage = document.getElementById('shell_symb');
 
-	// Ensure valid non-blank data being sent
-	if (symbol === '' || script === '') {
-		if (symbol === '' && script === '')
-			err_msg.innerText = "You have left both the Fields blank. Please Enter valid values.";
-		else if (symbol === '')
-			err_msg.innerText = "You have not entered the key to be pressed with Num-Lock/Caps-Lock. Please Enter valid value.";
-		else
-			err_msg.innerText = "You have not entered the command to be executed. Please Enter valid value.";
-	}
-	// Data is not blank
-	else {
-		// Last validity checks
-		if (symbol.length > 1 || symbol === '0') {
-			err_msg.innerText = "You have not entered any one valid key. Please Enter valid value between 1-9, a-z etc.";
-			return;
-		}
-		if (str_arr.length !== 0) {
-			for (let i = 0; i < str_arr.length - 1; i++) {
-				if (symbol === str_arr[i].split("#")[1]) {
-					err_msg.innerText = "Key Already assigned. Check shortcut list.";
-					return;
-				}
-				if (script === str_arr[i].split("#")[0]) {
-					err_msg.innerText = "Shortcut already set to \'" + str_arr[i].split("#")[1] + "\'. Check shortcut list.";
-					return;
-				}
-			}
-		}
 
-		// Write new rule to settings.dat
-		fs.appendFile('settings.dat', str.concat(script, '#', symbol, '\n'),
-			function (err) {
-				if (err)
-					return console.log(err);
-				console.log('Added to settings.');
-			}
-		);
-
-		if (str_arr.length === 0)
-			shell.openItem('move_to_startup.bat');
-
-		//Reload backend with new settings
-		shell.openItem('reload.bat');
-		// Reload page
-		location.replace('#yrscutsection');
-		location.reload();
-	}
+function prompt() {
+  const promptHere = document.getElementById('multilinePrompt');
+  promptHere.innerHTML = '<label for="shellscr" style="font-size: larger">Script contains multiple lines. Must be stored as a batch file.<br>Enter name of Script: </label><br>' +
+        '<input name="shell_script" type="text" class="shelltf" placeholder="Name of script" id="script_name" required="required" data-validation-required-message="Please enter the name to save the script as.">' +
+        '<p class="help-block text-danger" id="shell_symb"></p>' +
+        '<br><input type="button" class="go_button" onclick="multilineConfirmed()" value="Save the Script by this name">';
 }
 
 
-function close_app(){
-	const remote = require('electron').remote;
-	let w = remote.getCurrentWindow();
-	w.close();
+function multilineConfirmed() {
+  const scName = document.getElementById('script_name').value;
+  if (scName === '') { errorMessage.innerText = 'You have left the Name of Script Field blank.'; return; }
+  fs.mkdir('Custom_Scripts', (err) => {
+    if (err) {
+      return console.log(err);
+    }
+  },
+  );
+
+  // Make a new Custom Scripts folder.
+  fs.writeFile(`Custom_Scripts\\${scName}.bat`, script,
+    (err) => {
+      if (err) {
+        return console.log(err);
+      }
+    },
+  );
+
+  // Add the batch to settings.
+  script = `Custom_Scripts\\${scName}.bat`;
+  fs.appendFile('settings.dat', `${script}#${symbol}\n`,
+    (err) => {
+      if (err) { return console.log(err); }
+      console.log('Added to settings.');
+    },
+  );
+
+  // Reload backend with new settings
+  shell.openItem('reload.bat');
+  // Reload page
+  location.replace('#yrscutsection');
+  location.reload();
+}
+
+function writeToFile() {
+  const str = '';
+  symbol = document.getElementById('symb').value;
+  script = document.getElementById('shellscr').value;
+
+  // Ensure valid non-blank data being sent
+  if (symbol === '' || script === '') {
+    if (symbol === '' && script === '') { errorMessage.innerText = 'You have left both the Fields blank. Please Enter valid values.'; } else if (symbol === '') { errorMessage.innerText = 'You have not entered the key to be pressed with Num-Lock/Caps-Lock. Please Enter valid value.'; } else { errorMessage.innerText = 'You have not entered the command to be executed. Please Enter valid value.'; }
+  }
+  // Data is not blank
+  else {
+    // Last validity checks
+    if (symbol.length > 1 || symbol === '0') {
+      errorMessage.innerText = 'You have not entered any one valid key. Please Enter valid value between 1-9, a-z etc.';
+      return;
+    }
+    if (strArr.length !== 0) {
+      for (let i = 0; i < strArr.length - 1; i++) {
+        if (symbol === strArr[i].split('#')[1]) {
+          errorMessage.innerText = 'Key Already assigned. Check shortcut list.';
+          return;
+        }
+        if (script === strArr[i].split('#')[0]) {
+          errorMessage.innerText = `Shortcut already set to '${strArr[i].split('#')[1]}'. Check shortcut list.`;
+          return;
+        }
+      }
+    }
+
+    // If multi-line script
+    for (let i = 0; i < script.length; i++) {
+      if (script[i] === '\n') {
+        prompt();
+        return;
+      }
+    }
+
+    // Write new rule to settings.dat
+    fs.appendFile('settings.dat', str.concat(script, '#', symbol, '\n'),
+      (err) => {
+        if (err) { return console.log(err); }
+        console.log('Added to settings.');
+      },
+    );
+
+    if (strArr.length === 0) { shell.openItem('move_to_startup.bat'); }
+    // Reload backend with new settings
+    shell.openItem('reload.bat');
+    // Reload page
+    location.replace('#yrscutsection');
+    location.reload();
+  }
 }
 
 
-function clear_file(){
-    const fs = require("fs");
-	let str = '';
-
-	// Deletes Settings.dat
-	fs.unlink('settings.dat', function (err) {
-												if (err)
-													return console.log(err);
-												console.log('Cleared Settings.');
-											}
-			);
-
-
-	
-	//Reload backend with new settings
-	shell.openItem('reload.bat');
-	// Reload page
-	location.reload();
+function closeApp() {
+  const remote = require('electron').remote;
+  const w = remote.getCurrentWindow();
+  w.close();
 }
 
 
-function read_from_file(){
-	// Set required values
-	let items = document.getElementById("var_list");
-	let clear_tool = document.getElementById("clear_tool");
-	const fs = require("fs");
-	let default_output =
-		"<p class='section-heading text-uppercase' align='center' id='anger' style='color: white;'><span style='font-size: 25px;'>" +
-				"<br>THERE ARE NONE. THIS IS DISAPPOINTING.<br>" +
-				"<a href='#shortcuts' style='font-size: 30px;'>Get on it!</a><br><br><br>" +
-		"</span></p>";
-	let table_ele_style = "style='alignment: center; font-size: 25px; color: #1d2124; border: 2px solid black; background-color: ghostwhite; padding: 15px;'";
-	let str = '';
-	fs.readFile('settings.dat', 'utf8',
-			function (err, data){
-						if (err) {
-							// Default Output in Your Shortcuts section
-							items.innerHTML = default_output;
-							return console.log(err);
-						}
-						str = String(data);
+function clearFile() {
+  const str = '';
 
-						// If file is blank, remove file and refresh
-						if (str === '')
-							clear_file();
+  // Deletes Settings.dat
+  fs.unlink('settings.dat', (err) => {
+    if (err) { return console.log(err); }
+    console.log('Cleared Settings.');
+  },
+  );
 
-						str_arr = str.split('\n');
-						let shortcut = "", script = "";
-
-						str = "<br><table align='center' " + table_ele_style + ">" +
-							"<tr style='font-size: 35px; border: 1px solid black; background-color: #1d2124; color: white;'><td style='padding: 0 10px; border: 3px solid black;'>No.</td><td style='padding: 0 12px; border: 3px solid black;'>SHORTCUT</td><td align='center' style='padding: 0 200px; width: fit-content'>Opens</td></tr>";
-						for (let i = 0; i < str_arr.length - 1; i++) {
-							shortcut = str_arr[i].split('#')[1];
-							script = str_arr[i].split('#')[0];
-							str = str.concat("<tr " + table_ele_style + ">", "<td " + table_ele_style + ">", String(i+1), "</td>", "<td " + table_ele_style + ">", shortcut, "</td>", "<td " + table_ele_style + ">", script, "</td>", "</tr>");
-						}
-
-						// Output in Your Shortcuts section
-						if (str === '')
-							items.innerHTML = default_output;
-						else {
-							str = str.concat("</font></table>")
-							clear_tool.innerHTML = "<br><label style='font-size: 30px'>Shortcut number to be deleted: &nbsp; &nbsp; &nbsp; </label>" +
-								"<input type='text' class='filefound' id='shortcut_index' required='required' placeholder='>= 1'>" +
-								"<p class='help-block text-danger' id='at_index'></p>" +
-								"<input type='button' class='go_button filefound' id='delete_button' onclick='clear_index()' value='Delete this Shortcut'>" +
-								"<br><br><input type='button' class='go_button' id='button2' value='Clear all existing Shortcuts' onclick='clear_file()'>" +
-								"<br><br><td>Note:</td><td>&nbsp;&nbsp;&nbsp;Num-Lock/Caps-Lock + 0 is reserved for opening this GUI, anytime.</td>";
-							items.innerHTML = str;
-						}
-					}
-				);
+  // Reload backend with new settings
+  shell.openItem('reload.bat');
+  // Reload page
+  location.reload();
 }
 
 
-function clear_index() {
-	const index = document.getElementById("shortcut_index").value;
-	const fs = require("fs");
-	let str = '';
-	fs.readFile('settings.dat', 'utf8',
-		function (err, data) {
-					if (err) {
-						// Default Output in Your Shortcuts section
-						return console.log(err);
-					}
-					str = String(data);
-					str_arr = str.split('\n');
-					str = '';
-					for (let i = 0; i < str_arr.length - 1; i++) {
-						if (parseInt(index) === (i + 1))
-							continue;
-						str = str.concat(str_arr[i], '\n');
-					}
+function readFromFile() {
+  // Set required values
+  const items = document.getElementById('var_list');
+  const clearTool = document.getElementById('clear_tool');
+  const fs = require('fs');
+  const defaultOutput =
+      "<p class='section-heading text-uppercase text-center' id='anger' style='color: white;'><span style='font-size: 25px;'>" +
+      '<br>THERE ARE NONE. THIS IS DISAPPOINTING.<br>' +
+      "<a href='#new_cuts' style='font-size: 30px;'>Get on it!</a><br><br><br>" +
+      '</span></p>';
+  const tableElementStyle = "style='alignment: center; font-size: 25px; color: #1d2124; border: 2px solid black; background-color: ghostwhite; padding: 15px;'";
+  let str = '';
+  fs.readFile('settings.dat', 'utf8',
+    (err, data) => {
+      if (err) {
+        // Default Output in Your Shortcuts section
+        items.innerHTML = defaultOutput;
+        return console.log(err);
+      }
+      str = String(data);
 
-					// Check if valid value entered
-					if (index === '' || isNaN(index) || parseInt(index) > str_arr.length - 1) {
-						document.getElementById('at_index').innerText = "Please enter valid number to delete."
-						return;
-					}
+      // If file is blank, remove file and refresh
+      if (str === '') { clearFile(); }
 
-					// Write to Settings.dat
-					fs.writeFile('settings.dat', str,
-						function (err) {
-							if (err)
-								return console.log(err);
-							console.log('Removed from settings.');
-						}
-					);
+      strArr = str.split('\n');
+      let shortcut = '';
+      script = '';
 
-				//Reload backend with new settings
-				shell.openItem('reload.bat');
-				// Reload page
-				location.replace('#yrscutsection')
-				location.reload();
-			}
-	)
+      str = `<br><table align='center' ${tableElementStyle}>` +
+          '<tr style=\'font-size: 35px; border: 1px solid black; background-color: #1d2124; color: white;\'><td style=\'padding: 0 10px; border: 3px solid black;\'>No.</td><td style=\'padding: 0 12px; border: 3px solid black;\'>SHORTCUT</td><td align=\'center\' style=\'padding: 0 200px; width: fit-content\'>Opens</td></tr>';
+      for (let i = 0; i < strArr.length - 1; i++) {
+        shortcut = strArr[i].split('#')[1];
+        script = strArr[i].split('#')[0];
+        str = str.concat(`<tr ${tableElementStyle}>`, `<td ${tableElementStyle}>`, String(i + 1), '</td>', `<td ${tableElementStyle}>`, shortcut, '</td>', `<td ${tableElementStyle}>`, script, '</td>', '</tr>');
+      }
 
+      // Output in Your Shortcuts section
+      if (str === '') { items.innerHTML = defaultOutput; } else {
+        str = str.concat('</font></table>');
+        clearTool.innerHTML = "<br><label style='font-size: 30px'>Shortcut number to be deleted: &nbsp; &nbsp; &nbsp; </label>" +
+            "<input type='text' class='filefound' id='shortcut_index' required='required' placeholder='>= 1'>" +
+            "<p class='help-block text-danger' id='at_index'></p>" +
+            "<input type='button' class='go_button filefound' id='delete_button' onclick='clearIndex()' value='Delete this Shortcut'>" +
+            "<br><br><input type='button' class='go_button' id='button2' value='Clear all existing Shortcuts' onclick='clearFile()'>" +
+            '<br><br><td>Note:</td><td>&nbsp;&nbsp;&nbsp;Num-Lock/Caps-Lock + 0 is reserved for opening this GUI, anytime.</td>';
+        items.innerHTML = str;
+      }
+    },
+  );
+}
+
+
+function clearIndex() {
+  const index = document.getElementById('shortcut_index').value;
+  const fs = require('fs');
+  let str = '';
+  fs.readFile('settings.dat', 'utf8',
+    (err, data) => {
+      if (err) {
+        // Default Output in Your Shortcuts section
+        return console.log(err);
+      }
+      str = String(data);
+      strArr = str.split('\n');
+      str = '';
+      for (let i = 0; i < strArr.length - 1; i++) {
+        if (parseInt(index) === (i + 1)) { continue; }
+        str = str.concat(strArr[i], '\n');
+      }
+
+      // Check if valid value entered
+      if (index === '' || isNaN(index) || parseInt(index) > strArr.length - 1) {
+        document.getElementById('at_index').innerText = 'Please enter valid number to delete.';
+        return;
+      }
+
+      // Write to Settings.dat
+      fs.writeFile('settings.dat', str,
+        (error) => {
+          if (err) { return console.log(error); }
+          console.log('Removed from settings.');
+        },
+      );
+
+      // Reload backend with new settings
+      shell.openItem('reload.bat');
+      // Reload page
+      location.replace('#yrscutsection');
+      location.reload();
+    },
+  );
 }

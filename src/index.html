@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<!--
-This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framework for NumCuts.
+    <!--
+    This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framework for NumCuts.
 
-    Copyright (C) 2020  Dhiman Seal
+        Copyright (C) 2020  Dhiman Seal
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
--->
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    -->
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -35,14 +35,14 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top" onload="read_from_file()">
+    <body id="page-top" onload="readFromFile()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">Num-Cuts</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#shortcuts">New Shortcuts</a></li>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#new_cuts">New Shortcuts</a></li>
                       <li class="nav-item"></li>
                       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#yrscutsection">Your Shortcuts</a></li>
                       <li class="nav-item"></li>
@@ -50,40 +50,40 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                       <li class="nav-item"></li>
                       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">About</a></li>
                       <li class="nav-item"></li><li class="nav-item"></li>
-                      <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#!" onClick="close_app()" onmouseleave="style='color: white;'" onMouseMove="style='color: red; font-weight: bolder; font-size: larger'">Close</a> </li>
+                      <li class="nav-item"> <a class="nav-link js-scroll-trigger" onClick="closeApp()" href="" onmouseleave="style='color: white;'" onMouseMove="style='color: red; font-weight: bolder; font-size: larger'">Close</a> </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading" style="font-size: 100px"><br>Welcome To  NumCuts!</div>
                 <div class="masthead-heading text-uppercase">Let's get started!</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#shortcuts">Set up your shortcuts</a></div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#new_cuts">Set up your shortcuts</a></div>
         </header>
+
         <!-- New Shortcut-->
-        <section class="page-section shortcuts" id="shortcuts">
+        <section class="page-section" id="new_cuts">
             <div class="container">
                 <div class="text-center">
-                  <h2 class="section-heading text-uppercase">New Shortcut</h2>
-                  <h3 class="section-subheading text-muted">What do you mean this part of the page looks unprofessional? </h3>
+                    <h2 class="section-heading text-uppercase">New Shortcut</h2>
+                    <h3 class="section-subheading text-muted">What do you mean this part of the page looks unprofessional? </h3>
                 </div>
-                <div class="inputfields" align="center">
-                    <p>
-                        <label>Character to be pressed(a-z, 1-9):  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
-                        <input name="pressed_symbol" type="text" class="symtf" id="symb" required="required" data-validation-required-message="Please enter Symbol to be pressed while holding Num key.">
-                        <br>
-                        <label>Location of file/Shell Script/Web page URL to open:&nbsp; &nbsp;</label>
-                        <input name="shell_script" type="text" class="shelltf" id="shellscr" required="required" data-validation-required-message="Please enter what you want to run.">
-						<p class="help-block text-danger" id="shell_symb"></p>
-                    </p>
-                    <p align="center">
-						<br><input type="button" class="go_button" id="button1" onclick="write_to_file()" value="Add this new Shortcut">
-					</p>
+                <div class="inputfields text-center">
+                        <label for="symb" style="font-size: larger">Character to be pressed: </label>&emsp;
+                        <input name="pressed_symbol" type="text" placeholder="a-z, 1-9" class="symtf" id="symb" required="required" data-validation-required-message="Please enter Symbol to be pressed while holding Num key." style="width: 75px">
+                        <br><br>
+                        <label for="shellscr" style="font-size: larger">Location of file/Shell Script/Web page URL to open: </label><br>
+                        <textarea name="shell_script" type="text" class="shelltf" placeholder="eg.: www.google.com, C:\Folder\file.exe, calc, taskkill /f /im explorer.exe etc." id="shellscr" required="required" rows="5" cols="100" data-validation-required-message="Please enter what you want to run."></textarea>
+                        <p class="help-block text-danger" id="shell_symb"></p>
+                        <div class="shelltf" id="multilinePrompt"></div>
+                        <br><input type="button" class="go_button" id="add_button" onclick="writeToFile()" value="Add this new Shortcut">
                 </div>
             </div>
         </section>
+
         <!--  Existing Shortcuts-->
         <section class="page-section yrscutssection" id="yrscutsection">
             <div class="container">
@@ -91,12 +91,13 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                   <h2 class="section-heading text-uppercase" id="titleyrcuts">Your Shortcuts</h2>
                   <h3 class="section-subheading text-muted">The ones you've already set, y'know?</h3>
                 </div>
-				<div class="filefound" id="var_list">
-				</div><br><br>
-				<div class="filefound" id="clear_tool">
-				</div>
+                <div class="filefound" id="var_list">
+                </div><br><br>
+                <div class="filefound" id="clear_tool">
+                </div>
             </div>
         </section>
+
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -105,16 +106,16 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                   <h3 class="section-subheading text-muted">Don't @ me.</h3>
                 </div>
                 <div class="row">
-            <div class="col-lg-4"> </div>
+                    <div class="col-lg-4"> </div>
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/BoJack_Horseman_S06E01_12m1s17305f.jpg" alt="" />
                             <h4>Horse McFace</h4>
                             <p class="text-muted">Sad horsey.</p>
                             <a class="btn btn-dark btn-social mx-2" href="http://www.twitter.com/dhi13man"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="http://www.facebook.com/dhi13man"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="http://www.linkedin.com/dhi13man"><i class="fab fa-linkedin-in"></i></a>
-                      </div>
+                        </div>
                     </div>
-              </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                       <p class="large text-muted">Thank you for giving this software a shot. In the end, it was just a glorified project to show off.</p>
@@ -122,18 +123,19 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                 </div>
             </div>
         </section>
+
         <!-- ABOUT-->
         <section class="page-section" id="contact">
             <div class="container" style="padding: 0 20px;">
                 <div class="text-center">
-                  <h2 class="section-heading text-uppercase">About this software</h2>
-                  <h3 class="section-subheading text-muted">All that made this possible.</h3>
-                </div>
+                    <h2 class="section-heading text-uppercase">About this software</h2>
+                    <h3 class="section-subheading text-muted">All that made this possible.</h3>
+                    </div>
                 <div class="credits">
-                  <h2>Dependencies and Software used:</h2>
-                  <br>
+                    <h2>Dependencies and Software used:</h2>
+                    <br>
                     <ol>
-                    <li>This GUI:</li>
+                        <li>This GUI:</li>
                         <ol>
                             <li><a href="https://www.electronjs.org/releases/stable#8.2.3">Electron Framework v8.2.3</a></li>
                             <li><a href="https://nodejs.org/en/about/">Nodejs v13.13.0 and it's depenencies, (mostly 'fs')</a></li>
@@ -144,11 +146,10 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                             <li>Based on <a href="https://startbootstrap.com/themes/agency/">Agency</a>, a free Bootstrap Template</li>
                             <li><a href="https://www.adobe.com/in/products/dreamweaver.html">Adobe DreamWeaver</a></li>
                         </ol>
-                    <br>
-                    <li>The execution software:</li>
-                      <ol>
-                        <li><a href="https://en.cppreference.com/w/cpp/14">C++14</a></li>
-                        <li>Basic Windows Shell Script</li>
+                        <li>The execution software:</li>
+                        <ol>
+                            <li><a href="https://en.cppreference.com/w/cpp/14">C++14</a></li>
+                            <li>Basic Windows Shell Script</li>
                             <li><a href="http://www.mingw.org/">MingW-w64 Toolchain(for compiling and making the cpp)</a></li>
                             <li>A whole bunch of Jetbrains products:
                                 <ol>
@@ -157,12 +158,12 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
                                     <li><a href="https://www.jetbrains.com/pycharm/">Pycharm</a></li>
                                 </ol>
                             </li>
-                      </ol>
+                        </ol>
                     </ol>
                 </div>
-                    <div class="text-center">
-                       <br><a href="https://github.com/Dhi13man/Num-Cuts"><input type="button" align="center" class="go_button" id="githubbutton" value="Visit Github Repository"></a>
-                    </div>
+                <div class="text-center">
+                    <br><a href="https://github.com/Dhi13man/Num-Cuts"><input type="button" class="go_button align-self-center" id="githubbutton" value="Visit Github Repository"></a>
+                </div>
             </div>
         </section>
         <!-- Footer-->
@@ -178,8 +179,8 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
             </div>
         </footer>
 
-    <!-- Scripts -->
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <!-- Scripts -->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -187,9 +188,7 @@ This is the HTML/CSS/JavaScript based UI made using NodeJS and Electron Framewor
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-		<!-- Settings file handling-->
+        <!-- Settings file handling-->
         <script src="js/filesystem.js"></script>
-        <!-- TITLE BAR CUSTOM-->
-
     </body>
 </html>

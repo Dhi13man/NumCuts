@@ -10480,7 +10480,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     font-size: 120%;
     text-decoration-color: aliceblue;
   }
-  #button1 {
+  #add_button {
     padding: 15px 15px;
   }
   #button2 {
@@ -10519,7 +10519,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
   
   .filefound {
-  	margin: auto center;
+  	margin: auto;
 	padding: 0 150px;
 	align-content: center;
     color: white;
@@ -10529,4 +10529,14 @@ section#contact form#contactForm :-ms-input-placeholder {
       padding: 0 0;
       color: #1d2124;
   }
+}
+
+.float-container{
+  border: 3px solid #fff;
+  padding: 20px;
+}
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
 }

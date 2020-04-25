@@ -1,5 +1,5 @@
 {
-  "name": "NumCuts-GUI",
+  "name": "numcuts-gui",
   "productName": "NumCutsGUI",
   "version": "1.8.0",
   "description": "Configure Num-Cuts: A tool for custom shortcuts.",
@@ -16,7 +16,7 @@
   },
   "keywords": [],
   "author": "dhi13man",
-  "license": "GPL 3.0",
+  "license": "GPL-3.0",
   "config": {
     "forge": {
       "make_targets": {
@@ -35,7 +35,7 @@
         "packageManager": "npm"
       },
       "electronWinstallerConfig": {
-        "name": "num_cuts"
+        "name": "NumCuts"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
@@ -44,7 +44,7 @@
         "name": "NumCuts"
       },
       "windowsStoreConfig": {
-        "packageName": "",
+        "packageName": "NumCuts",
         "name": "numcuts"
       }
     }
