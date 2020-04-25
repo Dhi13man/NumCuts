@@ -17,8 +17,6 @@ Helper functions for the HTML/CSS based UI made using NodeJS and Electron Framew
 */
 
 import { shell } from 'electron';
-import { createStyleSheet } from 'custom-electron-titlebar/lib/common/dom';
-
 const fs = require('fs');
 
 let strArr = [];
@@ -30,15 +28,19 @@ const errorMessage = document.getElementById('shell_symb');
 
 function prompt() {
   const promptHere = document.getElementById('multilinePrompt');
-  promptHere.innerHTML = '<label for="shellscr" style="font-size: larger">Script contains multiple lines. Must be stored as a batch file.<br>Enter name of Script: </label><br>' +
-        '<input name="shell_script" type="text" class="shelltf" placeholder="Name of script" id="script_name" required="required" data-validation-required-message="Please enter the name to save the script as.">' +
-        '<p class="help-block text-danger" id="shell_symb"></p>' +
-        '<br><input type="button" class="go_button" onclick="multilineConfirmed()" value="Save the Script by this name">';
+  promptHere.innerHTML = '<br><label for="shellscr" style="font-size: large">Script contains multiple lines. Must be stored as a <b>Script file</b>.<br>Define this Script: </label><br>' +
+        '<input name="shell_script" type="text" style="width: 550px;  border-radius: 5px; border: solid black; padding: 20px 5px" class="shelltf" placeholder="Name of script (and extension, if checkbox below is left unchecked )" id="script_name" required="required" data-validation-required-message="Please enter the name to save the script as.">' +
+        '<br><input name="shell_script" type="text" style="width: 550px; border: 2px solid #ccc; padding: 5px 5px" class="shelltf" placeholder="Program that executes it(if not directly) eg. python for .py files" id="executioner" data-validation-required-message="Enter the command that executes the Script.">' +
+        '<br><p class="help-block text-danger" id="shell_symb"></p>' +
+        '<input type="checkbox" checked class="shelltf" id="batname" style="margin: 10px;">' +
+        '<label for="batname" style="font-size: x-large">Add \'.bat\' extension to the created file.</label><br>' +
+        '<br><br><input type="button" class="go_button" onclick="multilineConfirmed()" value="Save the Script by this name">';
 }
 
 
 function multilineConfirmed() {
-  const scName = document.getElementById('script_name').value;
+  let scName = String(document.getElementById('script_name').value);
+  let executioner = String(document.getElementById('executioner').value);
   if (scName === '') { errorMessage.innerText = 'You have left the Name of Script Field blank.'; return; }
   fs.mkdir('Custom_Scripts', (err) => {
     if (err) {
@@ -47,8 +49,10 @@ function multilineConfirmed() {
   },
   );
 
+  scName = (document.getElementById('batname').checked === true) ? (`${scName}.bat`) : scName;
+
   // Make a new Custom Scripts folder.
-  fs.writeFile(`Custom_Scripts\\${scName}.bat`, script,
+  fs.writeFile(`Custom_Scripts\\${scName}`, script,
     (err) => {
       if (err) {
         return console.log(err);
@@ -56,9 +60,9 @@ function multilineConfirmed() {
     },
   );
 
-  // Add the batch to settings.
-  script = `Custom_Scripts\\${scName}.bat`;
-  fs.appendFile('settings.dat', `${script}#${symbol}\n`,
+  // Add the script to settings.
+  script = `Custom_Scripts\\${scName}`;
+  fs.appendFile('settings.dat', (executioner !== '') ? `${executioner} ${script}#${symbol}\n` : `${script}#${symbol}\n`,
     (err) => {
       if (err) { return console.log(err); }
       console.log('Added to settings.');
@@ -191,7 +195,7 @@ function readFromFile() {
       if (str === '') { items.innerHTML = defaultOutput; } else {
         str = str.concat('</font></table>');
         clearTool.innerHTML = "<br><label style='font-size: 30px'>Shortcut number to be deleted: &nbsp; &nbsp; &nbsp; </label>" +
-            "<input type='text' class='filefound' id='shortcut_index' required='required' placeholder='>= 1'>" +
+            "<input type='number' class='filefound' id='shortcut_index' required='required' placeholder='>= 1'>" +
             "<p class='help-block text-danger' id='at_index'></p>" +
             "<input type='button' class='go_button filefound' id='delete_button' onclick='clearIndex()' value='Delete this Shortcut'>" +
             "<br><br><input type='button' class='go_button' id='button2' value='Clear all existing Shortcuts' onclick='clearFile()'>" +

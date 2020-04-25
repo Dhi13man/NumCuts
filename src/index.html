@@ -73,10 +73,10 @@
                 </div>
                 <div class="inputfields text-center">
                         <label for="symb" style="font-size: larger">Character to be pressed: </label>&emsp;
-                        <input name="pressed_symbol" type="text" placeholder="a-z, 1-9" class="symtf" id="symb" required="required" data-validation-required-message="Please enter Symbol to be pressed while holding Num key." style="width: 75px">
+                        <input name="pressed_symbol" type="text" maxlength="1" placeholder="a-z, 1-9" class="symtf" id="symb" required="required" data-validation-required-message="Please enter Symbol to be pressed while holding Num-Lock/Caps-Lock key." style="width: 62px; border: -moz-cellhighlight #545b62 solid; padding: 10px 3px">
                         <br><br>
                         <label for="shellscr" style="font-size: larger">Location of file/Shell Script/Web page URL to open: </label><br>
-                        <textarea name="shell_script" type="text" class="shelltf" placeholder="eg.: www.google.com, C:\Folder\file.exe, calc, taskkill /f /im explorer.exe etc." id="shellscr" required="required" rows="5" cols="100" data-validation-required-message="Please enter what you want to run."></textarea>
+                        <textarea name="shell_script" type="text" class="shelltf" placeholder="eg.: www.google.com, C:\Folder\file.exe, calc, taskkill /f /im explorer.exe etc." id="shellscr" required="required" rows="5" cols="100" data-validation-required-message="Please enter what you want to run." style="padding: 2px 5px; border: thin solid black"></textarea>
                         <p class="help-block text-danger" id="shell_symb"></p>
                         <div class="shelltf" id="multilinePrompt"></div>
                         <br><input type="button" class="go_button" id="add_button" onclick="writeToFile()" value="Add this new Shortcut">
