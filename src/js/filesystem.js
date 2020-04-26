@@ -62,7 +62,7 @@ function multilineConfirmed() {
 
   // Add the script to settings.
   script = `Custom_Scripts\\${scName}`;
-  fs.appendFile('settings.dat', (executioner !== '') ? `${executioner} ${script}#${symbol}\n` : `${script}#${symbol}\n`,
+  fs.appendFile('settings.dat', (executioner !== '') ? `${executioner}*@${script}#${symbol}\n` : `${script}#${symbol}\n`,
     (err) => {
       if (err) { return console.log(err); }
       console.log('Added to settings.');
