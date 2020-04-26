@@ -40,10 +40,25 @@ Installation:
 --
 1. Grab the latest version from the [Releases page](https://github.com/dhi13man/NumCuts/releases).
 2. Download and extract all the contents of the compressed Release file into the same folder and run NumCuts.exe.
-3. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
-4. Run your assigned shortcuts with `Num-Lock + (the assigned key)` or `Caps Lock + (the assigned key)` if so set.
-5. The original extracted files can then be deleted.
-6. If needed, open the GUI again to reconfigure shorcuts, using `Num-Lock + 0` or `Caps Lock + 0` if so set.
+3. Choose whether you'd like to hold `Num-Lock` or `Caps-Lock` to run the Shortcuts.
+4. Once it's done installing and NumCutsGUI runs, add your own Shorctcuts and close the GUI. You may remove the extracted files then, if you wish.
+5. Run your assigned shortcuts with `Num-Lock + (the assigned key)` or `Caps Lock + (the assigned key)` if so set.
+6. The original extracted files can then be deleted.
+7. If needed, open the GUI again to reconfigure shorcuts, using `Num-Lock + 0` or `Caps Lock + 0` if so set.
+
+Usage:
+--
+1. If not already open, open NumCuts-GUI using `Num-Lock + 0` or `Caps-Lock + 0`, as chosen during installation
+2. Head to `New Shortcuts` and assign your own Shortcut key with the location of the file or a multi-line script.
+3. Click on `Add this new Shortcut` Button.
+4. In case of multi-line script, give it a name(and extension).
+5. In case of multi-line script, you may also specify what program to execute the script with. 
+>Example: python for .py scripts, nodejs for NodeJS scripts, etc.
+6. Once the script/file location/website URL has been saved, run it with your assigned key while holding `Num-Lock` or `Caps-Lock`, as chosen during installation.
+7. Scroll down to `Your Shortcuts` button to view your assigned Shortcuts and corresponding Scripts in tabular form.
+8. Remove any scripts, if needed, by clicking `Remove this Shortcut` button after specifying Shortcut number. Or clear all assigned shortcuts by clicking on the `Clear all existing Shortcuts` button.
+9. Close the GUI. Execute your scripts anytime your machine is on, by pressing corresponding shortcut keys.
+10. If needed, open the GUI again to reconfigure shorcuts, using `Num-Lock + 0` or `Caps Lock + 0` as set.
 
 Source Code usage:
 --
