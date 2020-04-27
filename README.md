@@ -52,7 +52,7 @@ Usage:
 3. Click on `Add this new Shortcut` Button.
 4. In case of multi-line script, give it a name(and extension).
 5. In case of multi-line script, you may also specify what program to execute the script with. 
->Example: python for .py scripts, nodejs for NodeJS scripts, etc.
+>Example: python for .py scripts, node for NodeJS scripts, etc.
 6. Once the script/file location/website URL has been saved, run it with your assigned key while holding `Num-Lock` or `Caps-Lock`, as chosen during installation.
 7. Scroll down to `Your Shortcuts` Section to view your assigned Shortcuts and corresponding Scripts in tabular form.
 8. Remove any scripts, if needed, by clicking `Remove this Shortcut` button after specifying Shortcut number. Or clear all assigned shortcuts by clicking on the `Clear all existing Shortcuts` button.
