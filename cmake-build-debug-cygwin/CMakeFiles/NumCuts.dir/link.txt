@@ -1,0 +1,1 @@
+/usr/bin/c++.exe   -static-libstdc++ -static-libgcc -g  -Wl,--enable-auto-import CMakeFiles/NumCuts.dir/NumCuts.cpp.o  -o NumCuts.exe -Wl,--out-implib,libNumCuts.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

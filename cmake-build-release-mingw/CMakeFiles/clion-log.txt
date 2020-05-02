@@ -1,4 +1,4 @@
-"D:\Program Files\JetBrains\apps\CLion\ch-0\201.6668.126\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts"
+"D:\Program Files\JetBrains\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" "C:\Users\dhi13man\Desktop\Work shit\CLion-workspace\NumCuts"
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/cmake-build-release-mingw

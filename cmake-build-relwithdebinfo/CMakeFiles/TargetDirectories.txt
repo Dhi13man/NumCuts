@@ -1,0 +1,3 @@
+C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/cmake-build-relwithdebinfo/CMakeFiles/NumCuts.dir
+C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/cmake-build-relwithdebinfo/CMakeFiles/edit_cache.dir
+C:/Users/dhi13man/Desktop/Work shit/CLion-workspace/NumCuts/cmake-build-relwithdebinfo/CMakeFiles/rebuild_cache.dir
