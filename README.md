@@ -29,11 +29,11 @@ NumCuts is a C++ based tool that allows you to set up custom shortcut keys that 
 
 Contains the back-end code constructed in C++ and Batch. It is responsible for self-installation to C:\\ScrRunner (modifiable) and Startup, and executing the Scripts and GUI based on shortcuts.
 
-## [Master-GUI Branch:](https://github.com/Dhi13man/NumCuts/tree/master-gui)
+## [Master-GUI Branch](https://github.com/Dhi13man/NumCuts/tree/master-gui)
 
 Contains the front-end GUI interface made through HTML, CSS and JavaScript, built into an app using Nodejs and the Electron framework.
 
-### Installation
+## Installation
 
 1. Grab the latest version from the [Releases page](https://github.com/dhi13man/NumCuts/releases).
 2. Download and extract all the contents of the compressed Release file into the same folder and run NumCuts.exe.
@@ -42,7 +42,7 @@ Contains the front-end GUI interface made through HTML, CSS and JavaScript, buil
 5. Run your assigned shortcuts with `Num-Lock + (the assigned key)` or `Caps Lock + (the assigned key)` if so set.
 6. If needed, open the GUI again to reconfigure shorcuts, using `Num-Lock + 0` or `Caps Lock + 0` if so set.
 
-### Usage
+## Usage
 
 1. If not already open, open NumCuts-GUI using `Num-Lock + 0` or `Caps-Lock + 0`, as chosen during installation.
 
@@ -75,9 +75,9 @@ Contains the front-end GUI interface made through HTML, CSS and JavaScript, buil
 
 ----
 
-### Software/Dependencies used to create this tool
+## Software/Dependencies used to create this tool
 
-#### The GUI
+### The GUI
 
 1. [Electron Framework v8.2.3](https://www.electronjs.org/releases/stable#8.2.3)
 2. [Nodejs v13.13.0](https://nodejs.org/en/about/) and it's depenencies, (mostly 'fs')
@@ -88,7 +88,7 @@ Contains the front-end GUI interface made through HTML, CSS and JavaScript, buil
 7. Based on [Agency](https://startbootstrap.com/themes/agency/), a free Bootstrap Template
 8. [Adobe DreamWeaver](https://www.adobe.com/in/products/dreamweaver.html)
 
-#### The execution tool
+### The execution tool
 
 1. [C++14](https://en.cppreference.com/w/cpp/14)
 2. [Basic Windows Shell Script]
@@ -97,13 +97,13 @@ Contains the front-end GUI interface made through HTML, CSS and JavaScript, buil
    [CLion](https://www.jetbrains.com/clion/),
    [WebStorm](https://www.jetbrains.com/webstorm/)
 
-### Screenshots
+## Screenshots
 
 ![NumCuts_new_shortcut](https://user-images.githubusercontent.com/40964441/80081845-1d718900-8571-11ea-9b10-deff89b8467c.png)
 ![NumCuts_Shortcuts_Example](https://user-images.githubusercontent.com/40964441/80081867-26faf100-8571-11ea-8d10-1f81c5b3501c.png)
 ![NumCutsSetup](https://user-images.githubusercontent.com/40964441/80081971-48f47380-8571-11ea-99bd-3c5ffc0d2736.png)
 
-### Notes
+## Notes
 
 1. NumCuts has been programmed to automatically move to Windows Startup, so it can launch automatically every time the PC starts.
 2. The console also hides itself after installation. No Window is visible at all, thereby other operations are not disturbed.
