@@ -61,6 +61,7 @@ Usage:
 
 Source Code usage:
 --
+
 1. Modify the Source codes in either branch as needed.
 2. Compile the Source code of Master(C++), and package Master-GUI(Nodejs Electron). 
 3. The Release can only be executed on the specific OS and architecture it's been built for.
@@ -70,11 +71,10 @@ Source Code usage:
 7. Move Reload.bat and move_to_startup.bat from Master-GUI branch to "Numcuts-GUI" folder.
 8. Execute NumCuts.exe to set everything up. The original files can then be deleted.
 
-
----
-
+----
 
 Software/Dependencies used to create this tool:
+
 --
 
 The GUI:
@@ -88,6 +88,7 @@ The GUI:
 8. [Adobe DreamWeaver](https://www.adobe.com/in/products/dreamweaver.html)
 
 The execution tool:
+
 1. [C++14](https://en.cppreference.com/w/cpp/14)
 2. [Basic Windows Shell Script]
 3. [MingW-w64 Toolchain(for compiling and making the cpp)](http://www.mingw.org/)
@@ -95,7 +96,7 @@ The execution tool:
    [CLion](https://www.jetbrains.com/clion/), 
    [WebStorm](https://www.jetbrains.com/webstorm/)
 
-# Screenshots:
+# Screenshots
 
 ![NumCuts_new_shortcut](https://user-images.githubusercontent.com/40964441/80081845-1d718900-8571-11ea-9b10-deff89b8467c.png)
 ![NumCuts_Shortcuts_Example](https://user-images.githubusercontent.com/40964441/80081867-26faf100-8571-11ea-8d10-1f81c5b3501c.png)
